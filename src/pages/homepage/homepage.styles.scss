@@ -1,9 +1,52 @@
 .homepage {
-    background-color: #8e45ae;
+    &__container {
+        background-color: #8e45ae;
+        text-align: center;
+        padding-bottom: 8rem;
+        padding-top: 5rem;
+    }
+    &__name {
+        color: white;
+        font-size: 2.5rem;
+    }
+
+    &__position {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 300;
+
+        &:after {
+            display: block;
+            margin: 1rem auto;
+            height: .25rem;
+            width: 1.5rem;
+            background: white;
+            content: '';
+        }
+    }
+
+    &__social-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__showcase {
+        background-color: white;
+    }
 }
 
 .avatar {
     display: block;
+    clip-path: circle();
     margin: 0 auto;
     height: 15rem;
+}
+
+.circle {
+    height: 2rem;
+    width: 2rem;
+    padding: .5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-left: 1rem;
 }

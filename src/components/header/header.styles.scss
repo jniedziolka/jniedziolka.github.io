@@ -3,11 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all .5s;
+
+    &--sticky {
+        width: 100%;
+        z-index: 100;
+        position: fixed;
+        box-shadow: 0 .2rem 1.5rem rgba(black, .5);
+    }
 
     &__navigation {
-        margin-top: 2rem;
-        margin-bottom: 5rem;
-        color: white;
+        position: sticky;
+        margin: 2rem 0;
     }
 
     &__logo {
@@ -16,6 +23,8 @@
 
     &__link {
         cursor: pointer;
+        text-decoration: none;
+        color: white;
         margin-left: 2rem;
         font-size: .95rem;
         font-weight: 700;
