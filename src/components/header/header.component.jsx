@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as HomeLogo } from '../../assets/icons/home.svg';
 import './header.styles.scss'
 
@@ -22,10 +23,10 @@ const Header = () => {
     return (
         <header className="header" ref={headerEl} on>
             <nav className="header__navigation">
-                <a className="header__link" href="/"><HomeLogo className="header__logo" /></a>
+                <Link className="header__link" to="/"><HomeLogo className="header__logo" /></Link>
                 <a className="header__link" href="/#portfolio">PORTFOLIO</a>
-                <a className="header__link" href="/about">ABOUT</a>
-                <a className="header__link" href="/contact">CONTACT</a>
+                <Link className="header__link" to="/about">ABOUT</Link>
+                <Link className="header__link" to="/contact">CONTACT</Link>
             </nav>
         </header>
     );
