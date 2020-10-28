@@ -36,15 +36,26 @@ const Showcase = () => {
             <div className="showcase__projects">
                 {
                     Projects.map(project => {
-                        if(active === 'all') {
-                            return <img key={project.id} src={project.image} alt="" className="showcase__image" />;
-                        } else if(active === project.tag) {
-                            return <img key={project.id} src={project.image} alt="" className="showcase__image" />;
+                        if(active === 'all' || active === project.tag) {
+                            return  <div  key={project.id} className="showcase__project">
+                                        <img src={project.image} alt="" className="showcase__image"/>
+                                        <div className="showcase__external">
+                                            {
+                                                project.code ? <a href={project.code} className="showcase__external__code" target="_blank" rel="noopener noreferrer">CODE</a>
+                                                             : <button className="showcase__external__code" disabled={true}>CODE</button>
+                                            }
+                                            {
+                                                project.live ? <a href={project.live} className="showcase__external__code" target="_blank" rel="noopener noreferrer">LIVE</a>
+                                                             : <button className="showcase__external__code" disabled={true}>LIVE</button>
+                                            }
+                                        </div>
+                                    </div>
                         }
+                        return null;
                     })
                 }
             </div>
-            <button className="showcase__button-more">LOAD MORE</button>
+            <button className="showcase__button-more" disabled={Projects.length > 6 ? false : true}>LOAD MORE</button>
         </div>
     );
 }
