@@ -27,10 +27,15 @@
     }
 
     &__projects {
+        background-color: white;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 1.5rem;
         row-gap: 1.5rem;
+    }
+
+    &__image {
+        max-width: 100%;
     }
 
     &__button-more {

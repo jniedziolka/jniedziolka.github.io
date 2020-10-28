@@ -24,9 +24,5 @@
         color: white;
         padding: 1rem;
         transition: all 1s;
-
-        &:hover {
-            transform: rotate3d(1, 1, 1, 360deg);
-        }
     }
 }

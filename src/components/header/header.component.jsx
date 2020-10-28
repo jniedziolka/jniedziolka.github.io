@@ -21,7 +21,7 @@ const Header = () => {
     });
 
     return (
-        <header className="header" ref={headerEl} on>
+        <header className="header" ref={headerEl}>
             <nav className="header__navigation">
                 <Link className="header__link" to="/"><HomeLogo className="header__logo" /></Link>
                 <a className="header__link" href="/#portfolio">PORTFOLIO</a>
