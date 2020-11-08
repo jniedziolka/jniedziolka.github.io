@@ -1,4 +1,8 @@
 .header {
+    &__placeholder {
+        height: 5rem;
+    }
+
     background-color: #8e45ae;
     display: flex;
     justify-content: center;
@@ -6,6 +10,7 @@
     transition: all .5s;
 
     &--sticky {
+        transform: translate3d(0, 0, 0);
         width: 100%;
         z-index: 100;
         position: fixed;
@@ -13,7 +18,6 @@
     }
 
     &__navigation {
-        position: sticky;
         margin: 2rem 0;
     }
 

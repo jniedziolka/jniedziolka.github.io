@@ -14,24 +14,20 @@ const Contact = () => (
         <h2 className="contact__header contact__header--first">Want To Discuss A Project?</h2>
         <p className="contact__header contact__header--second">Just Drop A Message Below And I'll Get In Touch!</p>
         <div className="contact__information">
-            <div className="contact__information__logos-container">
+            <div className="contact__information__detail">
                 <EmailLogo className="contact__information__logo" />
-                <PhoneLogo className="contact__information__logo" />
-                <HomeLogo className="contact__information__logo" />
+                <h1 className="contact__information__header">QUERIES</h1>
+                <p className="contact__information__info">jakub.niedziolka@o2.pl</p>
             </div>
-            <div className="contact__information__details-container">
-                <div className="contact__information__detail">
-                    <h1 className="contact__information__detail--header">QUERIES</h1>
-                    <p className="contact__information__detail--info">jakub.niedziolka@o2.pl</p>
-                </div>
-                <div className="contact__information__detail">
-                    <h1 className="contact__information__detail--header">CALL ME</h1>
-                    <p className="contact__information__detail--info">510485134</p>
-                </div>
-                <div className="contact__information__detail">
-                    <h1 className="contact__information__detail--header">LOCATION</h1>
-                    <p className="contact__information__detail--info">Anywhere</p>
-                </div>
+            <div className="contact__information__detail">
+                <PhoneLogo className="contact__information__logo" />
+                <h1 className="contact__information__header">CALL ME</h1>
+                <p className="contact__information__info">510485134</p>
+            </div>
+            <div className="contact__information__detail">
+                <HomeLogo className="contact__information__logo" />
+                <h1 className="contact__information__header">LOCATION</h1>
+                <p className="contact__information__info">Anywhere</p>
             </div>
         </div>
         <div className="contact__form-container">

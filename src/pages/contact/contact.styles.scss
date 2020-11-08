@@ -27,35 +27,28 @@
     }
 
     &__information {
-        margin-top: 5rem;
+        margin: 5rem 0;
+        display: flex;
+        justify-content: space-evenly;
 
-        &__logos-container {
+        &__detail {
+            margin-right: 4rem;
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            color: white;
         }
 
         &__logo {
             height: 1.5rem;
         }
 
-        &__details-container {
-            display: flex;
-            justify-content: space-evenly;
+        &__header {
+            font-size: 1.25rem;
         }
 
-        &__detail {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            &--header {
-                font-size: 1.25rem;
-            }
-
-            &--info {
-                font-size: 1rem;
-                
-            }
+        &__info {
+            font-size: 1rem;
         }
     }
 
