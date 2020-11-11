@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
-import './contact-form.styles.scss';
+import {
+    FormContainer,
+    FormLeft,
+    FormRight,
+    FormGroup,
+    FormLabel,
+    FormInput,
+    FormTextarea,
+    FormButton
+} from './contact-form.styles';
 
 const ContactForm = () => {
     const [formInputs, setInputs] = useState({ name: '', email: '', message: ''});
@@ -32,26 +41,26 @@ const ContactForm = () => {
     
     return (
         <React.Fragment>
-            <form className="form" onSubmit={handleSubmit}>
-                <div className="form__container">
-                    <div className="form--left">
-                        <div className="form__group">
-                            <label htmlFor="" className="form__label">Your Name</label>
-                            <input type="text" name="name" className="form__input" placeholder="Write Your Name" value={name} onChange={handleChange} />
-                        </div>
-                        <div className="form__group">
-                            <label htmlFor="" className="form__label">Your Email</label>
-                            <input type="text" name="email" className="form__input" placeholder="Enter Your Email" value={email} onChange={handleChange} />
-                        </div>
-                    </div>
-                    <div className="form--right">
-                        <div className="form__group">
-                            <label htmlFor="" className="form__label">Your Message</label>
-                            <textarea name="message" id="" cols="30" rows="10" className="form__input form__input--textarea" placeholder="I'd love To Hire You!" value={message} onChange={handleChange}></textarea>
-                        </div>
-                    </div>
-                </div>
-                <button className="form__button">SEND MESSAGE</button>
+            <form onSubmit={handleSubmit}>
+                <FormContainer>
+                    <FormLeft>
+                        <FormGroup>
+                            <FormLabel>Your Name</FormLabel>
+                            <FormInput type="text" name="name" placeholder="Write Your Name" value={name} onChange={handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <FormLabel>Your Email</FormLabel>
+                            <FormInput type="text" name="email" placeholder="Enter Your Email" value={email} onChange={handleChange} />
+                        </FormGroup>
+                    </FormLeft>
+                    <FormRight>
+                        <FormGroup>
+                            <FormLabel>Your Message</FormLabel>
+                            <FormTextarea name="message" id="" cols="30" rows="10" placeholder="I'd love To Hire You!" value={message} onChange={handleChange}></FormTextarea>
+                        </FormGroup>
+                    </FormRight>
+                </FormContainer>
+                <FormButton>SEND MESSAGE</FormButton>
             </form>
         </React.Fragment>
     );

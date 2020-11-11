@@ -13,6 +13,14 @@ const Projects = [
         tag: 'laravel',
         code: '',
         live: 'https://gdynia.invisolite.com'
+    },
+
+    {
+        id: 3,
+        image: 'images/inviso.png',
+        tag: 'laravel',
+        code: '',
+        live: ''
     }
 ];
 

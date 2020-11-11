@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from './components/header/header.component';
 import HomePage from './pages/homepage/homepage.component';
 import Contact from './pages/contact/contact.component';
 import About from './pages/about/about.component';
-import './App.scss';
+import { AppContainer } from './App.styles'; 
 
 const App = () => (
-  <div className="App">
+  <AppContainer>
     <Header />  
     <Switch>
       <Route exact path = '/'>
@@ -22,7 +22,7 @@ const App = () => (
         <Contact />
       </Route>
     </Switch>
-  </div>
+  </AppContainer>
 )
 
 export default App;

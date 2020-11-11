@@ -1,7 +1,19 @@
 import React, { useRef, useState } from 'react';
 
 import Projects from '../../assets/storage/projects';
-import './showcase.styles.scss';
+
+import {
+    ShowcaseContainer,
+    ShowcaseNavigation,
+    ShowcaseLink,
+    ShowcaseProjectsContainer,
+    ShowcaseProject,
+    ShowcaseImage,
+    ShowcaseLinksContainer,
+    ShowcaseCodeLink,
+    ShowcaseCodeButton,
+    ShowcaseMoreButton
+} from './showcase.styles';
 
 const Showcase = () => {
     const allTag = useRef(null);
@@ -18,45 +30,45 @@ const Showcase = () => {
     const renderProjects = (event) => {
         for(const [key, value] of Object.entries(refTags)) {
             if(key === event.target.id) {
-                value.current.classList.add('showcase__link--active');
+                value.current.classList.add('active');
                 setActive(event.target.id);
             } else {
-                value.current.classList.remove('showcase__link--active');
+                value.current.classList.remove('active');
             }
         }
     }
 
     return (
-        <div className="showcase">
-            <nav className="showcase__header">
-                <p id="all" className="showcase__link showcase__link--active" ref={allTag} onClick={renderProjects}>ALL</p>
-                <p id="laravel" className="showcase__link" ref={laravelTag} onClick={renderProjects}>LARAVEL</p>
-                <p id="react" className="showcase__link" ref={reactTag} onClick={renderProjects}>REACT</p>
-            </nav>
-            <div className="showcase__projects">
+        <ShowcaseContainer>
+            <ShowcaseNavigation>
+                <ShowcaseLink id="all" className="active" ref={allTag} onClick={renderProjects}>ALL</ShowcaseLink>
+                <ShowcaseLink id="laravel" ref={laravelTag} onClick={renderProjects}>LARAVEL</ShowcaseLink>
+                <ShowcaseLink id="react" ref={reactTag} onClick={renderProjects}>REACT</ShowcaseLink>
+            </ShowcaseNavigation>
+            <ShowcaseProjectsContainer>
                 {
                     Projects.map(project => {
                         if(active === 'all' || active === project.tag) {
-                            return  <div  key={project.id} className="showcase__project">
-                                        <img src={project.image} alt="" className="showcase__image"/>
-                                        <div className="showcase__external">
+                            return  <ShowcaseProject  key={project.id} >
+                                        <ShowcaseImage src={project.image} alt="" />
+                                        <ShowcaseLinksContainer>
                                             {
-                                                project.code ? <a href={project.code} className="showcase__external__code" target="_blank" rel="noopener noreferrer">CODE</a>
-                                                             : <button className="showcase__external__code" disabled={true}>CODE</button>
+                                                project.code ? <ShowcaseCodeLink href={project.code} target="_blank" rel="noopener noreferrer">CODE</ShowcaseCodeLink>
+                                                             : <ShowcaseCodeButton disabled={true}>CODE</ShowcaseCodeButton>
                                             }
                                             {
-                                                project.live ? <a href={project.live} className="showcase__external__code" target="_blank" rel="noopener noreferrer">LIVE</a>
-                                                             : <button className="showcase__external__code" disabled={true}>LIVE</button>
+                                                project.live ? <ShowcaseCodeLink href={project.live} target="_blank" rel="noopener noreferrer">LIVE</ShowcaseCodeLink>
+                                                             : <ShowcaseCodeButton disabled={true}>LIVE</ShowcaseCodeButton>
                                             }
-                                        </div>
-                                    </div>
+                                        </ShowcaseLinksContainer>
+                                    </ShowcaseProject>
                         }
                         return null;
                     })
                 }
-            </div>
-            <button className="showcase__button-more" disabled={Projects.length > 6 ? false : true}>LOAD MORE</button>
-        </div>
+            </ShowcaseProjectsContainer>
+            <ShowcaseMoreButton disabled={Projects.length > 6 ? false : true}>LOAD MORE</ShowcaseMoreButton>
+        </ShowcaseContainer>
     );
 }
 

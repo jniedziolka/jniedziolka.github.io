@@ -2,22 +2,30 @@ import React from 'react';
 import SocialLogos from '../../components/social-logos/social-logos.component';
 import Showcase from '../../components/showcase/showcase.component';
 
-import './homepage.styles.scss'
+import {
+    Homepage,
+    HomepageContainer,
+    Avatar,
+    HomepageName,
+    HomepagePosition,
+    SocialContainer,
+    ShowcaseContainer
+} from './homepage.styles';
 
 const HomePage = () => (
-    <div className="homepage">
-        <div className="homepage__container">
-            <img src="images/avatar.png" alt="avatar" className="avatar"/>
-            <h1 className="homepage__name">Jakub Niedziółka</h1>
-            <h2 className="homepage__position">Software Developer</h2>
-            <div className="homepage__social-container">
+    <Homepage>
+        <HomepageContainer>
+            <Avatar src="images/avatar.png" alt="avatar" />
+            <HomepageName>Jakub Niedziółka</HomepageName>
+            <HomepagePosition>Software Developer</HomepagePosition>
+            <SocialContainer>
                 <SocialLogos />
-            </div>
-        </div>
-        <div id="portfolio" className="homepage__showcase">
+            </SocialContainer>
+        </HomepageContainer>
+        <ShowcaseContainer>
             <Showcase />
-        </div>
-    </div>
+        </ShowcaseContainer>
+    </Homepage>
 );
 
 export default HomePage;
