@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from '../../assets/styles/variables';
 
 export const ShowcaseContainer = styled.div`
     background-color: white;
@@ -7,6 +8,14 @@ export const ShowcaseContainer = styled.div`
     height: 10rem;
     transform: translateY(-2.75rem);
     border-radius: 1rem;
+
+    @media only screen and (max-width: ${breakpoints.breakpointLargest}) {
+        width: 75%;
+    }
+
+    @media only screen and (max-width: ${breakpoints.breakpointLarge}) {
+        width: 90%;
+    }
 `;
 
 export const ShowcaseNavigation = styled.nav`
@@ -18,7 +27,7 @@ export const ShowcaseNavigation = styled.nav`
 
 export const ShowcaseLink = styled.p`
     cursor: pointer;
-    margin-left: 2.5rem;
+    margin: 0 1.25rem;
     font-size: 1rem;
     font-weight: 500;
 
@@ -36,8 +45,12 @@ export const ShowcaseProjectsContainer = styled.div`
     column-gap: 1.5rem;
     row-gap: 1.5rem;
 
-    @media only screen and (max-width: 1520px) {
+    @media only screen and (max-width: ${breakpoints.breakpointMedium}) {
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        grid-template-columns: 1fr;
     }
 `;
 

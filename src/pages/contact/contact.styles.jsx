@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../../assets/styles/variables';
 
 import { ReactComponent as Email } from '../../assets/icons/email.svg';
 import { ReactComponent as Phone } from '../../assets/icons/phone.svg';
@@ -30,6 +31,10 @@ export const ContactHeader = styled.h2`
     color: white;
     text-align: center;
     font-size: 2rem;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        font-size: 1.5rem;
+    }
 `;
 
 export const ContactInvite = styled.p`
@@ -38,6 +43,10 @@ export const ContactInvite = styled.p`
     font-size: 1.5rem;
     font-weight: 700;
 
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        font-size: .85rem;
+    }
+
     &:after {
         display: block;
         margin: 1rem auto;
@@ -45,6 +54,10 @@ export const ContactInvite = styled.p`
         width: 2rem;
         background: white;
         content: '';
+
+        @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+            width: 1.5rem;
+        }
     }
 `;
 
@@ -60,14 +73,26 @@ export const InformationDetail = styled.div`
     flex-direction: column;
     align-items: center;
     color: white;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        margin-right: 1.25rem;
+    }
 `;
 
 export const InformationHeader = styled.h1`
     font-size: 1.25rem;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        font-size: .75rem;
+    }
 `;
 
 export const InformationInfo = styled.p`
     font-size: 1rem;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        font-size: .6rem;
+    }
 `;
 
 export const SocialContainer = styled.div`

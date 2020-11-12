@@ -5,8 +5,7 @@ import {
     HeaderContainer,
     HeaderNavigation,
     HomeLogo,
-    HeaderLink,
-    HeaderAnchor
+    HeaderLink
 } from './header.styles';
 
 const Header = () => {

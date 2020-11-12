@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { breakpoints } from '../../assets/styles/variables';
 
 import { ReactComponent as Person } from '../../assets/icons/user.svg';
 import { ReactComponent as Company } from '../../assets/icons/building.svg';
@@ -13,12 +14,25 @@ export const AboutDescriptionContainer = styled.div`
     background-color: white;
     display: flex;
     justify-content: center;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        flex-direction: column;
+        padding: 2rem 0;
+    }
 `;
 
 export const AboutMe = styled.div`
     width: 30%;
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: ${breakpoints.breakpointBig}) {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        margin: 0 4rem;
+    }
 `;
 
 export const AboutHeaderContainer = styled.div`
@@ -41,6 +55,14 @@ export const AboutDescription = styled.p`
     width: 55%;
     font-size: 1rem;
     font-weight: 300;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmall}) {
+        width: 75%;
+    }
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        width: 100%;
+    }
 `;
 
 export const AboutPosition = styled.p`
@@ -51,7 +73,9 @@ export const AboutPosition = styled.p`
 `;
 
 export const AboutWork = styled.div`
-
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        margin: 0 4rem;
+    }
 `;
 
 export const AboutElementContainer = styled.div`
@@ -75,8 +99,13 @@ export const ClockLogo = styled(Clock)`
 `;
 
 export const ServicesContainer = styled.div`
+    width: 100%;
     background-color: #8e45ae;
-    padding: 4rem 20rem;
+    padding: 3rem 0;
+
+    @media only screen and (max-width: ${breakpoints.breakpointLarge}) {
+        margin: 2rem 0;
+    }
 `;
 
 export const HelpContainer = styled.div`

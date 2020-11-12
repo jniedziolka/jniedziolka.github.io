@@ -27,6 +27,7 @@ export const HelpText = styled.p`
 `;
 
 export const HelpButton = styled.button`
+    font-size: 1rem;
     cursor: pointer;
     outline: none;
     border: none;

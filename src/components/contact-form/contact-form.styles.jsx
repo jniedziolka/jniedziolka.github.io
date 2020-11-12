@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../../assets/styles/variables';
 
 const baseInputStyles = css`
     background: inherit;
@@ -19,6 +20,11 @@ const baseInputStyles = css`
 export const FormContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const FormLeft = styled.div`
@@ -26,15 +32,27 @@ export const FormLeft = styled.div`
     flex-direction: column;
     justify-content: space-between;
     width: 30%;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        width: 80%;
+    }
 `;
 
 export const FormRight = styled.div`
     width: 30%;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        width: 80%;
+    }
 `;
 
 export const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        margin-bottom: 1.25rem;
+    }
 `;
 
 export const FormLabel = styled.label`

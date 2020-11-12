@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { ReactComponent as Home } from '../../assets/icons/home.svg';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ export const Placeholder = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
+    width: 100%;
     background-color: #8e45ae;
     display: flex;
     justify-content: center;
@@ -36,7 +37,7 @@ export const HeaderLink = styled(Link)`
     cursor: pointer;
     text-decoration: none;
     color: white;
-    margin-left: 2rem;
+    margin: 0 1rem;
     font-size: .95rem;
     font-weight: 700;
 `;
