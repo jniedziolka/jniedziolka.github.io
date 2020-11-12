@@ -38,7 +38,7 @@ const About = () => (
             </AboutMe>
             <AboutWork>
                 <AboutHeaderContainer>
-                    <CompanyLogo header />
+                    <CompanyLogo header="true" />
                     <AboutHeader>Work History</AboutHeader>
                 </AboutHeaderContainer>
                 <AboutPosition>Full-Stack/Software Developer</AboutPosition>
