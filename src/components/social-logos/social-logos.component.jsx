@@ -12,12 +12,12 @@ const SocialLogos = () => (
                 <FacebookLogo />
             </CircleClip>
         </a>
-        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.github.com/jniedziolka" target="_blank" rel="noopener noreferrer">
             <CircleClip>
                 <GithubLogo />
             </CircleClip>
         </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/jakub-niedziolka" target="_blank" rel="noopener noreferrer">
             <CircleClip>
                 <LinkedinLogo />
             </CircleClip>
