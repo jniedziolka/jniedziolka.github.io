@@ -9,9 +9,9 @@ import {
     ShowcaseProjectsContainer,
     ShowcaseProject,
     ShowcaseImage,
+    ShowcaseHeader,
     ShowcaseLinksContainer,
-    ShowcaseCodeLink,
-    ShowcaseCodeButton,
+    ShowcaseExternalLink,
     ShowcaseMoreButton
 } from './showcase.styles';
 
@@ -51,15 +51,10 @@ const Showcase = () => {
                         if(active === 'all' || active === project.tag) {
                             return  <ShowcaseProject  key={project.id} >
                                         <ShowcaseImage src={project.image} alt="" />
+                                        <ShowcaseHeader>{project.title}</ShowcaseHeader>
                                         <ShowcaseLinksContainer>
-                                            {
-                                                project.code ? <ShowcaseCodeLink href={project.code} target="_blank" rel="noopener noreferrer">CODE</ShowcaseCodeLink>
-                                                             : <ShowcaseCodeButton disabled={true}>CODE</ShowcaseCodeButton>
-                                            }
-                                            {
-                                                project.live ? <ShowcaseCodeLink href={project.live} target="_blank" rel="noopener noreferrer">LIVE</ShowcaseCodeLink>
-                                                             : <ShowcaseCodeButton disabled={true}>LIVE</ShowcaseCodeButton>
-                                            }
+                                            <ShowcaseExternalLink href={project.code ? project.code : ''} target="_blank" rel="noopener noreferrer" enabled={project.code}>CODE</ShowcaseExternalLink>
+                                            <ShowcaseExternalLink href={project.live ? project.live : ''} target="_blank" rel="noopener noreferrer" enabled={project.live}>LIVE</ShowcaseExternalLink>
                                         </ShowcaseLinksContainer>
                                     </ShowcaseProject>
                         }
@@ -67,7 +62,7 @@ const Showcase = () => {
                     })
                 }
             </ShowcaseProjectsContainer>
-            <ShowcaseMoreButton disabled={Projects.length > 6 ? false : true}>LOAD MORE</ShowcaseMoreButton>
+            {Projects.length > 6 ? <ShowcaseMoreButton>LOAD MORE</ShowcaseMoreButton> : null}
         </ShowcaseContainer>
     );
 }

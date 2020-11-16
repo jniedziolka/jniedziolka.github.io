@@ -44,6 +44,7 @@ export const ShowcaseProjectsContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1.5rem;
     row-gap: 1.5rem;
+    margin-bottom: 1.5rem;
 
     @media only screen and (max-width: ${breakpoints.breakpointMedium}) {
         grid-template-columns: 1fr 1fr;
@@ -62,18 +63,39 @@ export const ShowcaseProject = styled.div`
         visibility: visible;
         opacity: 1;
     }
+    
+    &:hover > img {
+        filter: brightness(75%);
+    }
 
-    &:hover {
-        transform: scale(1.1);
+    &:hover > p {
+        opacity: 1;
     }
 `;
 
 export const ShowcaseImage = styled.img`
     max-width: 100%;
     height: auto;
+    transition: all .5s;
+`;
+
+export const ShowcaseHeader = styled.p`
+    width: 100%;
+    font-size: 1.25rem;
+    display: block;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity .5s;
 `;
 
 export const ShowcaseLinksContainer = styled.div`
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     font-size: 1rem;
@@ -87,27 +109,17 @@ export const ShowcaseLinksContainer = styled.div`
     }
 `;
 
-export const ShowcaseCodeLink = styled.a`
+export const ShowcaseExternalLink = styled.a`
+    font-weight: 700;
     text-decoration: none;
     outline: none;
-    background-color: #FAC663;
+    background-color: #8e45ae;
     color: white;
     border-radius: 1px;
     padding: 1rem 1.5rem;
-`;
-
-export const ShowcaseCodeButton = styled.button`
-    text-decoration: none;
-    outline: none;
-    background-color: #FAC663;
-    color: white;
-    border-radius: 1px;
-    padding: 1rem 1.5rem;
-
-    &:disabled {
-        cursor: not-allowed;
-        background-color: gray;
-    }
+    border: none;
+    pointer-events: ${props => props.enabled ? 'auto' : 'none'};
+    opacity: ${props => props.enabled ? 1 : .5};
 `;
 
 export const ShowcaseMoreButton = styled.button`
@@ -116,7 +128,7 @@ export const ShowcaseMoreButton = styled.button`
     outline: none;
     border: .2rem solid transparent;
     margin: 1.5rem auto;
-    padding: 1.25rem 1.75rem;
+    padding: 1.25rem 1.5rem;
     border-radius: .2rem;
     background-color: #FAC663;
     color: white;
@@ -124,14 +136,9 @@ export const ShowcaseMoreButton = styled.button`
     font-weight: 700;
     transition: all 1s;
 
-    &:hover:enabled {
+    &:hover {
         background-color: white;
         color: #FAC663;
         border: .2rem solid #FAC663;
-    }
-
-    &:disabled {
-        cursor: not-allowed;
-        background-color: gray;
     }
 `;

@@ -31,7 +31,8 @@ export const AboutMe = styled.div`
     }
 
     @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
-        margin: 0 4rem;
+        margin: 0 1.5rem;
+        width: 90%;
     }
 `;
 
@@ -74,7 +75,7 @@ export const AboutPosition = styled.p`
 
 export const AboutWork = styled.div`
     @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
-        margin: 0 4rem;
+        margin: 0 1.5rem;
     }
 `;
 
