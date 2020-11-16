@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 import {
@@ -14,7 +14,9 @@ import {
 
 const ContactForm = () => {
     const [formInputs, setInputs] = useState({ name: '', email: '', message: ''});
+    const [sendState, setSendState] = useState(false);
     const { name, email, message } = formInputs;
+    const buttonRef = useRef(null);
 
     const handleChange = event => {
         const { value, name } = event.target;
@@ -24,6 +26,8 @@ const ContactForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
+        buttonRef.current.innerText = 'Loading...';
+        setSendState(true);
 
         const templateParams = {
             from_name: name,
@@ -33,10 +37,20 @@ const ContactForm = () => {
 
         emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, templateParams, process.env.REACT_APP_USER_ID)
             .then((result) => {
-                console.log(result.text);
+                buttonRef.current.classList.add('form-success');
+                buttonRef.current.innerText = 'Email was delivered!';
             }, (error) => {
-                console.log(error.text);
+                buttonRef.current.classList.add('form-error');
+                buttonRef.current.innerText = 'Error! Please try later!';
             });
+
+        setTimeout(() => {
+            setInputs({ name: '', email: '', message: ''});
+            buttonRef.current.classList.remove('form-success');
+            buttonRef.current.classList.remove('form-error');
+            buttonRef.current.innerText = 'SEND MESSAGE';
+            setSendState(false);
+        }, 5000);
     }
     
     return (
@@ -60,7 +74,7 @@ const ContactForm = () => {
                         </FormGroup>
                     </FormRight>
                 </FormContainer>
-                <FormButton>SEND MESSAGE</FormButton>
+                <FormButton ref={buttonRef} disabled={sendState}>SEND MESSAGE</FormButton>
             </form>
         </React.Fragment>
     );

@@ -85,9 +85,21 @@ export const FormButton = styled.button`
     font-weight: 700;
     transition: all 1s;
 
-    &:hover {
+    &:hover:enabled {
         background-color: white;
         color: #FAC663;
         border: .2rem solid #FAC663;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &.form-success {
+        background-color: green;
+    }
+
+    &.form-error {
+        background-color: red;
     }
 `;

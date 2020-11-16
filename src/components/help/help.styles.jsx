@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as Like } from '../../assets/icons/like.svg';
 
@@ -26,11 +27,13 @@ export const HelpText = styled.p`
     font-size: 1rem;
 `;
 
-export const HelpButton = styled.button`
+export const HelpButton = styled(Link)`
     font-size: 1rem;
     cursor: pointer;
     outline: none;
     border: none;
+    text-decoration: none;
+    font-weight: 700;
     background-color: #FAC663;
     color: white;
     padding: 1rem;

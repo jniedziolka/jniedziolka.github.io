@@ -16,7 +16,7 @@ const Help = () => (
             <LikeIcon />
             <HelpText>I can try to solve your problems!</HelpText>
         </HelpTemptation>
-        <HelpButton>Contact Me</HelpButton>
+        <HelpButton to='/contact'>CONTACT ME</HelpButton>
     </HelpContainer>
 );
 
