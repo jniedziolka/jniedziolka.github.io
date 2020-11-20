@@ -19,12 +19,14 @@ const Showcase = () => {
     const allTag = useRef(null);
     const laravelTag = useRef(null);
     const reactTag = useRef(null);
+    const nodeTag = useRef(null);
     const [active, setActive] = useState('all');
 
     const refTags = {
         'all': allTag,
         'laravel': laravelTag,
-        'react': reactTag
+        'react': reactTag,
+        'node': nodeTag
     }
 
     const renderProjects = (event) => {
@@ -44,11 +46,12 @@ const Showcase = () => {
                 <ShowcaseLink id="all" className="active" ref={allTag} onClick={renderProjects}>ALL</ShowcaseLink>
                 <ShowcaseLink id="laravel" ref={laravelTag} onClick={renderProjects}>LARAVEL</ShowcaseLink>
                 <ShowcaseLink id="react" ref={reactTag} onClick={renderProjects}>REACT</ShowcaseLink>
+                <ShowcaseLink id="node" ref={nodeTag} onClick={renderProjects}>NODE.JS</ShowcaseLink>
             </ShowcaseNavigation>
             <ShowcaseProjectsContainer>
                 {
                     Projects.map(project => {
-                        if(active === 'all' || active === project.tag) {
+                        if(active === 'all' || project.tags.includes(active)) {
                             return  <ShowcaseProject  key={project.id} >
                                         <ShowcaseImage src={project.image} alt="" />
                                         <ShowcaseHeader>{project.title}</ShowcaseHeader>

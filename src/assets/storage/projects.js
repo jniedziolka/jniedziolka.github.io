@@ -1,29 +1,38 @@
 const Projects = [
     {
         id: 1,
+        title: 'Portfolio Website',
+        image: 'images/portfolio.png',
+        tags: ['react'],
+        code: 'https://github.com/jniedziolka/jniedziolka.github.io',
+        live: 'https://jniedziolka.github.io/'
+    },
+
+    {
+        id: 2,
+        title: 'Let\'s Talk!',
+        image: 'images/letstalk.png',
+        tags: ['react', 'node'],
+        code: 'https://github.com/jniedziolka/random-chat',
+        live: 'https://lets-talk-chat.herokuapp.com/'
+    },
+
+    {
+        id: 3,
         title: 'InviteMe (company project)',
         image: 'images/inviteme.png',
-        tag: 'laravel',
+        tags: ['laravel'],
         code: '',
         live: 'https://inviteme-tobg.com'
     },
 
     {
-        id: 2,
+        id: 4,
         title: 'InvisoLite (company project)',
         image: 'images/inviso.png',
-        tag: 'laravel',
+        tags: ['laravel'],
         code: '',
         live: 'https://gdynia.invisolite.com'
-    },
-
-    {
-        id: 3,
-        title: 'Portfolio Website',
-        image: 'images/portfolio.png',
-        tag: 'react',
-        code: 'https://github.com/jniedziolka/jniedziolka.github.io',
-        live: 'https://jniedziolka.github.io/'
     }
 ];
 

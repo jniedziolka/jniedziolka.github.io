@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Portfolio - my own website 
 
-## Available Scripts
+This application is personal website where you can find information about myself:
+- Links to my social medias
+- Screens and links to code/live version of some of my projects
+- My contact details
 
-In the project directory, you can run:
+Feel free to have a quick glance and write me an email.
+Enjoy your time!
 
-### `yarn start`
+**Programming is like a silent poetry and we, as the authors, put beauty into our own work.**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can find a live version of this project **<a href="https://jniedziolka.github.io/">here</a>**.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Tech used in the project
+This application uses these technologies:
+- [React] - used for the whole page, alongside with e.g. styled components for clean code
+- [EmailJS] - maybe it's not a technology but service used to provide email communication with me
 
-### `yarn test`
+### Local installation
+ 	
+Install the dependencies and start the app.
+```sh
+$ yarn
+$ yarn start
+```
+   
+### License
+MIT
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Links
+Author's **<a href="https://www.linkedin.com/in/jakub-niedziolka/">LinkedIn</a>**.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Author's **<a href="https://jniedziolka.github.io/">Personal Site</a>**.
