@@ -36,6 +36,10 @@ export const ShowcaseLink = styled.p`
         padding-bottom: 1.25rem;
         border-bottom: .15rem solid #FAC663;
     }
+
+    @media only screen and (max-width: ${breakpoints.breakpointSmallest}) {
+        font-size: .75rem;
+    }
 `;
 
 export const ShowcaseProjectsContainer = styled.div`
